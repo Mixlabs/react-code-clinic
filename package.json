@@ -1,0 +1,18 @@
+{
+    "name": "fakeflix-masterclass",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev:api": "pnpm --filter @fakeflix/api dev",
+        "dev:seed": "pnpm --filter @fakeflix/seed dev",
+        "dev:architecture": "pnpm --filter @fakeflix/architecture dev",
+        "dev:testing": "pnpm --filter @fakeflix/testing dev",
+        "dev:performance": "pnpm --filter @fakeflix/performance dev",
+        "dev:final": "pnpm --filter @fakeflix/final dev",
+        "build": "pnpm --recursive --filter './apps/*' build",
+        "db:seed": "pnpm --filter @fakeflix/database seed"
+    },
+    "devDependencies": {
+        "typescript": "^5.9.3"
+    }
+}

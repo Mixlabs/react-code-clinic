@@ -1,0 +1,20 @@
+{
+    "name": "@fakeflix/database",
+    "version": "1.0.0",
+    "private": true,
+    "main": "./src/index.ts",
+    "exports": {
+        ".": "./src/index.ts"
+    },
+    "scripts": {
+        "seed": "tsx src/index.ts"
+    },
+    "dependencies": {
+        "better-sqlite3": "^12.10.0"
+    },
+    "devDependencies": {
+        "@types/better-sqlite3": "^7.6.10",
+        "tsx": "^4.16.0",
+        "typescript": "^5.4.5"
+    }
+}
