@@ -14,7 +14,10 @@
         "test:performance": "pnpm --filter @fakeflix/performance test",
         "test:performance:watch": "pnpm --filter @fakeflix/performance test:watch",
         "test:performance:coverage": "pnpm --filter @fakeflix/performance test:coverage",
-        "dev:final": "pnpm --filter @fakeflix/final dev",
+        "dev:final": "pnpm --parallel --filter @fakeflix/api --filter @fakeflix/final dev",
+        "test:final": "pnpm --filter @fakeflix/final test",
+        "test:final:watch": "pnpm --filter @fakeflix/final test:watch",
+        "test:final:coverage": "pnpm --filter @fakeflix/final test:coverage",
         "build": "pnpm --recursive --filter './apps/*' build",
         "db:seed": "pnpm --filter @fakeflix/database seed"
     },
