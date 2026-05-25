@@ -1,0 +1,149 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: #141414;
+    color: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
+    min-height: 100vh;
+}
+
+/* ── HEADER ─────────────────────────────────────────────────────────────── */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0 48px;
+    height: 70px;
+    background: linear-gradient(180deg, #000000f2 0%, #000000bb 100%);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid #ffffff12;
+}
+
+.logo {
+    font-size: 1.9rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    user-select: none;
+    white-space: nowrap;
+}
+.logo .fake { color: #6abf3b; text-shadow: 0 0 24px #6abf3b66; }
+.logo .flix { color: #ffffff; }
+
+.search {
+    background: #1f1f1f;
+    border: 1.5px solid #2e2e2e;
+    border-radius: 6px;
+    padding: 9px 16px;
+    color: #ffffff;
+    font-size: 14px;
+    width: 260px;
+    transition: border-color 0.2s, background 0.2s;
+}
+.search::placeholder { color: #555; }
+.search:focus { outline: none; border-color: #6abf3b; background: #252525; }
+
+.tabs { display: flex; gap: 8px; margin-left: auto; }
+
+.tab {
+    background: transparent;
+    border: 1.5px solid #2e2e2e;
+    border-radius: 6px;
+    color: #999999;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 22px;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+.tab:hover { border-color: #6abf3b; color: #6abf3b; }
+.tab.active { background: #6abf3b; border-color: #6abf3b; color: #111111; }
+
+/* ── LOADING ─────────────────────────────────────────────────────────────── */
+
+.loading {
+    text-align: center;
+    padding: 100px 0;
+    color: #6abf3b;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* ── GRID ────────────────────────────────────────────────────────────────── */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 40px 48px;
+}
+
+/* ── CARD ────────────────────────────────────────────────────────────────── */
+
+.card {
+    background: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 16px 48px #00000099;
+    z-index: 1;
+}
+.card img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+}
+
+.card-info { padding: 12px; }
+
+.card-info h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #f0f0f0;
+}
+
+.card-info p {
+    font-size: 11.5px;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* ── HEART BUTTON ────────────────────────────────────────────────────────── */
+
+.heart {
+    background: transparent;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 0;
+    display: block;
+    transition: transform 0.15s ease;
+}
+.heart:hover { transform: scale(1.4); }
+
+/* ── EMPTY STATE ─────────────────────────────────────────────────────────── */
+
+.empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 0;
+    color: #444;
+}
+.empty p { font-size: 1rem; letter-spacing: 0.5px; }

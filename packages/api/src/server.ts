@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import swaggerUi from 'swagger-ui-express';
 import { moviesRouter } from './movies/movies.routes';
 import { swaggerDocument } from './docs/swagger';
@@ -8,6 +9,7 @@ const PORT: number = 3000;
 const app = express();
 
 app.disable('x-powered-by');
+app.use(cors({ origin: /^http:\/\/localhost(:\d+)?$/ }));
 app.use(express.json());
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
