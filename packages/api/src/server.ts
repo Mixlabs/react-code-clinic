@@ -11,6 +11,10 @@ const app = express();
 app.disable('x-powered-by');
 app.use(cors({ origin: /^http:\/\/localhost(:\d+)?$/ }));
 app.use(express.json());
+app.use('/api', (_req, res, next) => {
+    res.set('Cache-Control', 'no-store');
+    next();
+});
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use('/api/movies', moviesRouter);
