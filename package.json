@@ -5,6 +5,7 @@
     "scripts": {
         "dev:api": "pnpm --filter @fakeflix/api dev",
         "dev:seed": "pnpm --filter @fakeflix/seed dev",
+        "dev:00": "pnpm --parallel --filter @fakeflix/api --filter @fakeflix/seed dev",
         "dev:architecture": "pnpm --filter @fakeflix/architecture dev",
         "dev:testing": "pnpm --filter @fakeflix/testing dev",
         "dev:performance": "pnpm --filter @fakeflix/performance dev",
